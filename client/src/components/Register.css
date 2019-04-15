@@ -1,0 +1,215 @@
+
+main.registrationForm {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 90%;
+    margin: 1rem auto;
+    /*border: black 1px solid;*/
+    padding-bottom: 4rem;
+}
+progress{
+    width: 100%;
+    height: 2.5rem;
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Get rid of default border in Firefox. */
+    border: none;
+    position: relative;
+    top: -.5rem;
+    z-index: -1;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-moz-progress-bar { 
+background: var(--dark-gray);
+border-radius: 2px; 
+}
+progress[value]::-webkit-progress-value {
+    background-color: var(--dark-gray);
+    border-radius: 2px; 
+}
+.progressSteps{
+    color: rgb(160, 160, 160);
+    position: absolute;
+    top: 4.5rem;
+    right: 2rem;
+    mix-blend-mode: difference;
+    z-index: -1;
+}
+/*=========== Form Step ==============*/
+section.formStep{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formStep>h1{
+    text-align: center;
+}
+.formStep>p{
+    margin-top: 0;
+    padding-bottom: 3rem;
+    text-align: justify;
+
+    border-bottom: solid var(--dark-gray) 2px;
+}
+.formStep>label{
+    align-self: flex-start;
+}
+.inputSection>input{
+    display: block;
+    margin-bottom: .5rem;
+    width: 100%;
+}
+.formStep .inputSection{
+    width: 80%;
+    max-width: 30rem;
+}
+.inputSection>div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+#userImg{
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.fileSection{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.fileSection button{
+    margin: .5rem;
+    background: var(--green);
+    color: var(--light-gray);
+    border-radius: .5rem;
+    padding: 0;
+    align-self: center;
+}
+.fileSection label{
+    display: inline-block;
+    padding: .8rem;
+}
+#userImgView{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+#userImgView p{
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#userImgView img{
+    margin: .5rem;
+    width: 8rem;
+    height: 8rem;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+.formStep fieldset{
+    display: inline-block;
+}
+.formStep fieldset input{
+    display: none;
+}
+.formStep fieldset legend{
+    margin: .3rem 0;
+}
+.formStep fieldset label{
+    background: var(--dark-gray);
+    color: var(--light-gray);
+    padding: .5rem;
+    margin: .5rem 0;
+}
+.formStep label[for='female']{
+    border-radius: .5rem 0 0 .5rem;
+}
+.formStep label[for='male']{
+    border-radius: 0 .5rem .5rem 0;
+}
+.formStep fieldset label.checked{
+    background: var(--green);
+}
+.birthday{
+    margin: .5rem 0;
+}
+.birthday>label{
+    margin: 0 .5rem;
+}
+.formStep input[type= 'image']{
+    width: auto;
+    margin: .5rem;
+}
+.listItem, .inputItemSection{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    flex: 1 0;
+}
+.listItem{
+    margin-bottom: 1rem;
+    /*border-bottom: dashed var(--dark-gray) 1px;*/
+    box-shadow: 0 0 7px 0 var(--dark-gray);
+    border-radius: .5rem;
+    padding: .5rem;
+}
+.inputItem{
+    margin: 0 .5rem .5rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.inputItem>label{
+    margin: 0 .5rem;
+}
+.inputItem>textarea{
+    width: 100%;
+    height: 3rem;
+}
+.inputItem>input{
+    width: 100%;
+}
+/*========= Form buttons =============*/
+.formNav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+.formNav .formButton{
+    width: 6rem;
+    margin: .5rem;
+    background: var(--green);
+    color: var(--light-gray);
+    border-radius: .5rem;
+    padding: .8rem;
+    font-weight: 700;
+}
+.formButton[type="submit"]{
+    background: var(--blue);
+}
+
+@media screen and (min-width: 50rem){
+    section.formStep{
+        width: 80%;
+    }
+    .inputItem{
+        flex: 1 0;
+    }
+}

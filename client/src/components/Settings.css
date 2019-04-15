@@ -1,0 +1,100 @@
+form.settings{
+    margin: 1rem;
+    align-self: center;
+    /*border: 1px solid var(--dark-gray);*/
+    flex: 1 1;
+    width: 95%;
+    max-width: 30rem;
+    text-align: center;
+}
+
+form.settings button{
+    font-size: 1rem;
+}
+.optionSwitch p, .optionToggle{
+    display: inline-block;
+}
+.optionSwitch, .cycleSetting{
+    border: none;
+    background: var(--light-gray);
+    margin: 0.4rem auto;
+    box-shadow: 0 0 4px 0px var(--dark-gray);
+    padding: .2rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.optionSwitch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+.cycleSetting{
+    width: 100%;
+    margin: 0;
+}
+.optionToggle{
+    /*border: 1px solid var(--dark-gray);*/
+    width: 7rem;
+}
+.optionToggle .option{
+    margin: 0;
+    width: 50%;
+    box-sizing: border-box;
+    background: var(--dark-gray);
+    color: #fff;
+}
+.optionToggle .option:first-child{
+    padding: .5rem ;
+    border-radius: .5rem 0 0 .5rem;
+}
+.optionToggle .option:nth-child(2){
+    padding: .5rem;
+    border-radius: 0 .5rem .5rem 0;
+}
+.optionToggle .checked{
+    background: var(--green);
+}
+.settings button[type="submit"]{
+    padding: 0.3rem;
+    border-radius: .5rem;
+    max-width: 10rem;
+    background: var(--blue);
+    color: #fff;
+    margin-top: 1rem;
+}
+.cycleConfig{
+    width: 95%;
+    margin: .4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.configOpen{
+    border: 1px solid var(--dark-gray);
+    border-radius: .5rem;
+}
+.configItem{
+    margin: .4rem .4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    text-align: left;
+}
+.configItem:last-child{
+    margin-bottom: .4rem;
+}
+.configItem>label{
+    margin-right: 1rem;
+    flex: 1;
+}
+.configItem>input[type="number"]{
+    width: 3rem;
+}
+
+.activate{
+    margin: 1rem;
+    align-self: flex-end;
+}

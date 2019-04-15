@@ -1,0 +1,25 @@
+:root {
+    font-family: 'Titillium Web', sans-serif;
+    background: var(--light-gray);
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+
+    --green: rgb(46, 204, 113);
+    --light-gray: rgb(242, 241, 239);
+    --dark-gray: rgb(108, 122, 137)/*rgb(46, 49, 49)*/;
+    --red: rgb(217, 30, 24);
+    --blue: rgb(34, 167, 240);
+  }
+  body{
+    margin: 0;
+  }
+.heading {
+    font-weight: 700;
+  }
+.subheading {
+    font-weight: 300;
+  }
+img{
+  height: 100%;
+  }

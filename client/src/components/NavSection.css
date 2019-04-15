@@ -1,0 +1,177 @@
+/*============== User label ==================*/
+.userLabel{
+    display: none;
+
+}
+
+/*============= Navigation ======================*/
+.navigation{
+    width: 100%;
+    height: 100%;
+}
+.navigation section{
+    height: 100%;
+    width: 25%;
+    display: inline-block;
+    position: relative;
+}
+.navigation img{
+    height: 2rem;
+}
+.navigation button{
+    height: 100%;
+    width: 100%;
+    background: var(--green);
+    border: none;
+    border-left: 1px solid var(--dark-gray);
+    border-right: 1px solid var(--dark-gray);
+    cursor: pointer;
+}
+button.navActive{
+    background: var(--light-gray);
+}
+.navOpen{
+    position: absolute;
+    bottom: var(--navBar-bottom-height);
+    background: var(--green);
+    border: 1px solid var(--dark-gray);
+    min-width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navOpen.lastOnRight{
+    right: 0;
+}
+/*.navigation a{
+    text-decoration: none;
+}
+.navOpen a {
+    display: block;
+    border: 2px solid var(--dark-gray);
+    background: var(--light-gray);
+    color: #000;
+    margin: .5rem;
+    padding: 0.8rem;
+    border-radius: .5rem;
+    text-align: center;
+}*/
+.navOpen button{
+    border: 2px solid var(--dark-gray);
+    background: var(--light-gray);
+    border-radius: .5rem;
+    color: #000;
+    margin: .5rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    width: 90%;
+    cursor: pointer;
+}
+.navOpen button:active, .navOpen button:hover{
+    background: var(--dark-gray);
+    color: #fff;
+}
+.navClose{
+    display: none;
+}
+/**/
+.navigation button>p{
+    display: none;
+}
+    
+/*=============== Partner label ===================*/        
+.partnerLabel{
+    display: none;
+
+}
+   
+@media screen and (min-width: 50rem){
+
+    .navBar{
+        flex-flow: column nowrap;
+        display: flex;
+    }
+
+    .userLabel{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        color: var(--light-gray);
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .userLabel>img{
+        margin: .5rem;
+        width: 20%;
+        min-width: 3rem;
+        height: initial;
+        border-radius: .5rem;
+        border: 2px solid var(--dark-gray);
+    }
+    .userLabel>p{
+        margin: 0;
+    }
+
+    .navigation{
+        width: 90%;
+        max-width: 15rem;
+        height: initial;
+        display: flex;
+        flex-flow: column nowrap;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .navigation section{
+        height: initial;
+        width: initial;
+        margin-top: .5rem;
+        
+    }
+    .navigation button{
+        background: var(--light-gray);
+        border: 2px solid var(--dark-gray);
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    button.navActive{
+        background: var(--dark-gray);
+        color: #fff;
+    }
+    .navActive>img{
+        filter: invert(1);
+    }
+    .navigation button>p{
+        display: initial;
+        font-size: 1rem;
+    }
+    .navOpen{
+        bottom: initial;
+        top: 100%;
+        left: 50%;
+        border-radius: 0 .5rem .5rem .5rem;
+    }
+
+    .partnerLabel{
+        display: block;
+        color: var(--light-gray);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        text-align: center;
+        word-break: break-all;
+    }
+
+
+    .partnerLabel img{
+        height: initial;
+        width: 80%;
+        border-radius: .5rem;
+        border: 2px solid var(--dark-gray);
+    }
+}

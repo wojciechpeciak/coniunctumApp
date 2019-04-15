@@ -1,0 +1,91 @@
+/*============== Container and section =====================*/
+:root{
+    --navBar-bottom-height: 2.5rem;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: hidden;  /* quick fix */
+}
+.headerBar{
+    flex: 0 1 auto;
+}
+/*
+*   Main part
+*/
+main.appMain{
+    flex: 1 1 auto;
+
+    height: 50%; /* quick fix */
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+}
+/*
+*   main content
+*/
+    .mainContent{
+        overflow: auto;
+        flex: 1 1;
+        position: relative;
+    }
+
+/*======== Invitation Bar ===========*/
+.invitationBar{
+    border: 2px solid var(--dark-gray);
+    display: block;
+    text-align: center;
+    padding: .3rem;
+}
+.invitContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.greenButton{
+    border: 2px solid var(--dark-gray);
+    background: var(--green);
+    color: var(--light-gray);
+    padding: 0.3rem;
+    border-radius: .5rem;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+.invitContainer>p{
+    margin: 0 .5rem .5rem .5rem;
+    display: inline-block;
+}
+    /*
+    *   navBar
+    */
+    .navBar{
+        flex: 0 1 auto;
+        display: flex;
+        background: var(--green);
+        border: solid 1px var(--dark-gray);
+        height: var(--navBar-bottom-height);
+    }
+        
+@media screen and (min-width: 50rem){
+
+    main.appMain{
+        flex-flow: row-reverse nowrap;        
+    }
+
+    .mainContent{
+        flex: initial;
+        height: 100%;
+        width: 80%;
+        border: solid 1px var(--dark-gray);
+    }
+
+    .navBar{
+        flex: initial;
+        height: 100%;
+        width: 20%;
+    }
+
+}

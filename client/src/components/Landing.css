@@ -1,0 +1,41 @@
+main.public {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 90%;
+    margin: 1rem auto;
+    /*border: black 1px solid;*/
+    padding-bottom: 4rem;
+}
+.public img{
+    width: 100%;
+    border-radius: .1rem;
+}
+.textContent{
+    max-width: 50rem;
+}
+.textContent h1{
+    text-align: center;
+}
+.textContent p{
+    text-align: justify;
+}
+
+@media screen and (min-width: 50rem){
+
+    main.public{
+        flex-flow: row nowrap;
+        margin-bottom: 0;
+        padding-bottom: 3rem;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+    .public img{
+        width: 50%;
+        max-width: 30rem;
+        max-height: 50rem;
+        order: 2;
+        margin-left: 2rem;
+        object-fit: cover;
+    }
+}

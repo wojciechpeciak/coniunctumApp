@@ -1,0 +1,61 @@
+main.about {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 90%;
+    margin: 1rem auto;
+    /*border: black 1px solid;*/
+    padding-bottom: 4rem;
+}
+.author{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+} 
+.author img{
+    width: 50%;
+    border-radius: 10%;
+    flex-grow: 0;
+}
+.credits img{
+    height: 1rem;
+}
+.about a{
+    text-decoration: none;
+}
+.project{
+    text-align: justify;
+}
+
+@media screen and (min-width: 35rem){
+
+    .description{
+        display: flex;
+        align-items: center
+    }
+    .author{
+        flex-flow: column nowrap;
+        width: 45%;
+    }
+    .author img{
+        order: 2;
+        height: auto;
+    }
+    .project{
+        width: 55%;
+        max-width: 30rem;
+    }
+    .credits h2{
+        text-align: center;
+    }
+    .credits div{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+    .credits p{
+        margin-right: .5rem;
+    }
+
+}

@@ -1,0 +1,84 @@
+.cardSwitch>button{
+    width: 50%;
+    height: 2rem;
+    background: var(--green);
+    border: 1px solid var(--dark-gray);
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+#leftButton.active{
+    border-left: none;
+}
+#rightButton.active{
+    border-right: none;
+}
+.cardSwitch>button.active{
+    background: var(--light-gray);
+    color: black;
+    border-bottom: 1px solid var(--light-gray);
+}
+.relationshipCard>p{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.relationshipCard #addItem{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.submitButton{
+    margin: .5rem auto;
+    background: var(--blue);
+    color: var(--light-gray);
+    border-radius: .5rem;
+    padding: .8rem;
+    font-weight: 700;
+    display: block;
+}
+/* quick fix */
+.relationshipCard .listItem{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+.relationshipCard .confirmation{
+    width: 50%;
+}
+/*============== Partner view ===========*/
+
+.partnerCardItems{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.partnerListItem{
+    margin-bottom: .5rem;
+    /*border-bottom: dashed var(--dark-gray) 1px;*/
+    min-width: 40%;
+    max-width: 90%;;
+}
+.cardItem{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 0 0 7px 0 var(--dark-gray);
+    border-radius: .5rem;
+}
+.cardItem .content{
+    background: var(--green);
+    max-width: 50%;
+    border-radius: 1rem;
+    padding: 1rem;
+    word-wrap: break-word;
+    margin: .5rem;
+    color: #fff;
+    white-space: pre-wrap;
+}
+.cardItem .title{
+    margin-left: .5rem;
+    max-width: 50%;
+}

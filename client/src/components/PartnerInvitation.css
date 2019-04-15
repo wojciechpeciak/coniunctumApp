@@ -1,0 +1,23 @@
+.invitOption{
+    text-align: center;
+    margin: .5rem;
+}
+.mainContent>hr{
+    border: 1px solid var(--dark-gray);
+    background: var(--dark-gray);
+    width: 90%;
+}
+.invitAlert{
+    display: inline-block;
+    margin: .5rem 0;
+}
+.invitInput>label{
+    margin-right: .5rem;
+}
+.invitInput>button{
+    margin: 1rem .5rem;
+}
+.invitCode{
+    color: var(--blue);
+    font-weight: 700;
+}

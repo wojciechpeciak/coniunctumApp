@@ -1,0 +1,141 @@
+
+/*======== Navigation ============*/
+.publicNavBar {
+    min-height: 4rem;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 0 0 .5rem .5rem;
+    background: var(--green);
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+.publicNavBar a{
+    text-decoration: none;
+    color: #000;
+}
+.navList{
+    height: 3rem;
+}
+.navList input{
+    position: relative;
+    margin: 0 .5rem;
+}
+.navLinks {
+    display: none;
+    position: absolute;
+    background: var(--green);
+    left: 0;
+    width: 50%;
+    max-width: 200px;
+    z-index: 1;
+}
+.navLinks a{
+    display: block;
+    border-radius: .5rem;
+    background: var(--light-gray);
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 130%;
+    text-align: center;
+}
+
+a.active, .navLinks a:hover, .navLinks a:active, .navOpen a.active{
+    background: var(--dark-gray);
+    color: #fff;
+}
+/*====== When visible =========*/
+.navbarOpen .navLinks{
+    display: block;
+    padding: 1rem;
+
+}
+/*============ Branding =================*/
+
+.brand{
+    height: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--light-gray);
+    font-weight: 700;
+}
+.brand img{
+    height: 80%;
+    max-height: 3rem;
+    margin-right: .5rem;
+}
+/*=========== Right section ============*/
+.lang{
+    margin-right: .5rem;
+    color: var(--light-gray);
+    cursor: pointer;
+}
+.langActive{
+    font-weight: 700;
+}
+/*===========*/
+.navList input{
+    height: 100%;
+}
+/*===========*/
+@media screen and (min-width: 50rem){
+    .publicNavBar{
+        justify-content: flex-start;
+    }
+    .publicNavBar>a{
+        display: block;
+        margin-left: 2rem;
+        width: 200px;
+    }
+   
+    .lang{
+        order: 3;
+        position: absolute;
+        right: 0;
+        margin-right: 2rem;
+    }
+    .navList{
+        display: flex;
+        align-content: center;
+        order: 2;
+    }
+    
+    .navList input{
+        display: none
+    }
+    .navLinks {
+        display: flex;
+        position: relative;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: .5rem;
+        width: auto;
+        max-width: none;
+
+    }
+    .navLinks a{
+        display: inline;
+        padding: .5rem;
+        margin: .1rem;
+        font-size: 100%;
+    }
+}
+
+@media screen and (max-height: 30rem){
+    .navbarOpen .navLinks{
+        width: 93%;
+        max-width: none;
+
+        flex-flow: row wrap;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+}

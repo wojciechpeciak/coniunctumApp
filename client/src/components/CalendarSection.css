@@ -1,0 +1,434 @@
+/*/variables & mixins*/
+.calendar{
+    --white: #FFFFFF;
+    --ltGrey: #EFEFEF;
+    --mdGrey: #C0C0C0;
+    --dkGrey: #CCCCCC;
+    --secondary: var(--green);
+    --dkSecondary: hsl(145, 63%, 39%);
+    --ltSecondary: hsl(145, 63%, 75%);
+    --borderColor: var(--dkGrey);
+    --background: var(--white);
+}
+
+.vertical-center {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+.calendar .header{
+    display: flex;
+  justify-content:center;
+  align-items: center;
+  color: var(--white);
+    cursor: default;
+    font-size:1.4rem;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    user-select: none;
+}
+.month-display {
+    align-items: center;
+    height: 40px;
+    background: var(--secondary);
+}
+.month-label { 
+    flex: 1;
+ }
+ .arrow {
+    text-align: center;
+    flex-basis: 15%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .2s;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-size: 150%;
+}
+.arrow:hover {
+    background: var(--dkSecondary);
+}
+.arrow.previous{
+    transform: scaleX(-1);
+}
+.week {
+    border-top: solid 1px var(--borderColor);
+
+    
+}
+.week:first-child {
+    border-top: none;
+}
+.day-names {
+    color: var(--secondary);
+    font-weight: bold;
+    cursor: default;
+    font-size: 1rem;
+    
+}
+.day-names .day {
+    cursor: default;
+    
+    
+}
+.day-names .day:hover {
+    background: inherit;
+
+}
+.day {
+    display: flex;
+  justify-content:center;
+  align-items: center;
+    flex: 1;
+    height: 35px;
+    border-left: solid 1px var(--borderColor);
+    cursor: pointer;
+    transition: all .2s;
+    position: relative;
+    z-index: 0;
+}
+.day:hover {
+    background: var(--ltGrey);
+}
+
+.day:first-child {
+    border-left:none;
+}
+
+.day.today {
+    background: var(--ltSecondary);
+}
+
+.day.different-month {
+    color: var(--mdGrey);
+}
+
+.day.selected {
+    background: var(--secondary);
+    color: var(--white);
+}
+.calendar {
+    display: block;
+    background: var(--white);
+    width: 90%;
+    border: solid 1px var(--borderColor);
+    margin: 10px auto;
+    box-shadow: 0 0 15px 0 var(--mdGrey);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/**/
+.labelContainer{
+    content: '';
+    height: 2rem;
+    width: 2rem;
+    background: var(--dark-gray);
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: .3;
+}
+.iconLabel{
+    position: absolute;
+    height: 30%;
+}
+.iconLabel.topLeft{
+    top: 1px;
+    right: calc(50% + .6rem);
+}
+.iconLabel.topRight{
+    bottom: 1px;
+    left: calc(50% + .6rem);
+}
+.iconLabel.bottomLeft{
+    bottom: 1px;
+    right: calc(50% + .6rem);
+}
+/*===== Daily events ========*/
+.dailyEvents{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.dailyEventsTitle{
+    border-bottom: 2px solid var(--dark-gray);
+    display: flex;
+    justify-content: space-between;
+}
+.dailyEventsTitle>p{
+    margin: 0;
+    padding: 0 .5rem;
+    display: inline-block;
+    font-size: 80%;
+}
+.eventsList{
+    flex: 1 1;
+    overflow: auto;
+    padding-bottom: 3.5rem;
+}
+.eventsListItem{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    border: none;
+    /*border-bottom: 1px solid var(--dark-gray);*/
+    background: var(--light-gray);
+    margin: 0.4rem auto;
+    box-shadow: 0 0 4px 0px var(--dark-gray);
+    padding: .2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.eventsListItem:hover{
+    background: var(--dark-gray);
+    color: #fff;
+}
+.eventsListItem:active{
+    box-shadow: inset 0 0 10px 0px #000;
+
+}
+.eventItemLabel{
+    display: inline-block;
+    margin-right: .5rem;
+}
+.calendarEventLabel{
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+}
+.bothEventLabel{
+    background: #f47c6d;
+    color: #fff;
+}
+.meEventLabel{
+    background: rgb(206, 206, 206);
+}
+.partnerEventLabel{
+    background: var(--green);
+    color: #fff;
+
+}
+.itemStartDate{
+    margin: .2rem 0;
+    font-size: 70%;
+}
+.eventTitle{
+    display: inline-block;
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: left;
+}
+.dailyEvents>input{
+    margin: .5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    right: .5rem;
+    bottom: 0;
+    background: var(--light-gray);
+    border-radius: 50%;
+}
+.fullView{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+.eventsTypesPicker{
+    background: var(--light-gray);
+    width: 90%;
+    max-width: 11rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+.eventType{
+    font-size: 1rem;
+    text-align: right;
+
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    
+    background: var(--light-gray);
+    border: 2px solid var(--dark-gray);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .5rem;
+    padding: .7rem;
+}
+.eventType>img{
+    height: 1rem;
+}
+.eventsTypesPicker>input{
+    width: 2.5rem;
+    align-self: center;
+    margin: .5rem;
+}
+.eventEdit, .eventView{
+    background: var(--light-gray);
+    width: 90%;
+    /*max-width: 11rem;*/
+    padding: .5rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cardTitle{
+    margin: .5rem 0;
+}
+.eventEdit>div{
+    width: 90%;
+}
+.eventEdit button, .eventView button{
+    padding: 0.3rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    width: 27%;
+    max-width: 8rem;
+}
+.calendarEventType{
+    margin-left: .5rem;
+}
+.eventEdit label{
+    margin: .5rem;
+    margin-bottom: 0;
+    display: block;
+}
+.eventTitle>input, .eventDescription>textarea{
+    width: 100%;
+}
+.eventActionBar{
+    display: flex;
+    justify-content: space-between;
+}
+.eventActionBar>button[type="submit"]{
+    background: var(--blue);
+    color: #fff;
+}
+.smallCard{
+    width: initial;
+}
+.smallCard .eventDate>p{
+    text-align: center;
+}
+.smallCard button{
+    width: initial;
+}
+.smallCard>button{
+    margin: .5rem;
+    width: 50%;
+
+}
+button.period{
+    background: #f47c6d;
+    color: #fff;
+}
+button.notPeriod, button.noPill{
+    color: #fff;
+    background: var(--dark-gray);
+}
+button.pill{
+    background: var(--green);
+    color: #fff;
+}
+.eventOption{
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button.noSex{
+    background: var(--dark-gray);
+    width: 80%;
+}
+button.sex{
+    background: #f47c6d;
+    width: 40%;
+}
+button.unprotectedSex{
+    background: var(--dark-gray);
+    width: 40%;
+}
+button.protectedSex{
+    background: var(--green);
+    width: 40%;
+}
+.eventView{
+    width: initial;
+    padding: 1rem;
+    max-width: 85%;
+}
+.eventViewTitleLabel{
+    display: flex;
+    align-items: flex-start;
+}
+.eventViewTitleLabel .calendarEventLabel{
+    flex: 0 0 1.5rem;
+    margin-right: .5rem;
+}
+.eventViewDates{
+    align-self: flex-start;
+}
+.eventViewDate{
+    display: flex;
+    justify-content: space-between;
+}
+.eventViewDate>:first-child{
+    margin-right: 1rem;
+    font-weight: 700;
+}
+.eventViewDescription{
+    white-space: pre-wrap;
+}
+.eventViewActionBar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.eventViewActionBar .delete{
+    background: var(--red);
+    color: #fff;
+}
+.eventViewActionBar .edit{
+    background: var(--blue);
+    color: #fff;
+}
+
+@media screen and (min-width: 50rem){
+    .day{
+        height: 3rem;
+    }
+    .dailyEvents>input{
+        bottom: 1rem;
+        right: 3%;
+    }
+}

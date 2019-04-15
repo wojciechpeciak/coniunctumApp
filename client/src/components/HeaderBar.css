@@ -1,0 +1,142 @@
+
+/*======== Navigation ============*/
+.counter {
+    display: none;
+    text-align: center;
+}
+.headerBar {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    /*border-radius: 0 0 .5rem .5rem;*/
+    background: var(--green);
+    color: var(--light-gray);
+
+    /*position: -webkit-sticky; 
+    position: sticky;
+    top: 0;*/
+}
+.openTab{
+    font-weight: 700;
+    margin: 0 .5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.openTab img{
+    height: 80%;
+    max-height: 3rem;
+    margin-right: .5rem;
+}
+
+.extraTools{
+    height: 85%;
+    margin-right: .5rem;
+}
+
+.extraTools>input{
+    height: 100%;
+    position: relative;
+}
+/*============== Conversation library ================*/
+.conversationLibrary{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--light-gray);
+    z-index: 1;
+}
+    /*============= Library bar ================*/
+.libraryBar{
+    color: var(--light-gray);
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    border-radius: 0 0 .5rem .5rem;
+
+}
+
+.libraryBar>input{
+    height: 90%;
+    margin: 0 .5rem;
+    transform: scaleX(-1);
+}
+
+.libraryBar>p{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+}
+    /*================= Library content =====================*/
+.libraryContent{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem;
+}
+    /*============== Img container =======================*/
+.imgContainer{
+    margin: .5rem .5rem 0 0;
+    width: 20%;
+    min-width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgContainer>input{
+    max-width: 100%;
+    height: auto;
+}
+    /*===========Img fullscreen==================*/
+.imgContainer .fullScreen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullScreen input{
+    height: 3rem;
+    margin: .5rem;
+    align-self: flex-end;
+}
+
+.fullScreen img{
+    max-width: 90%;
+    max-height: 75%;
+    height: auto;
+}
+
+@media screen and (min-width: 35rem){
+    .counter{
+        display: block;
+    }
+
+    .extraTools, .libraryBar>input{
+        margin-right: 1rem;
+    }
+
+    .openTab{
+        margin-left: 1rem;
+    }
+    .fullScreen input{
+        align-self: center;
+    }
+}

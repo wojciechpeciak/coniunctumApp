@@ -1,0 +1,61 @@
+main.login {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 90%;
+    margin: 1rem auto;
+    /*border: black 1px solid;*/
+    padding-bottom: 4rem;
+}
+.login h1.title{
+    height: 7rem;
+    line-height: 7rem;
+    text-align: center;
+    color: var(--light-gray);
+
+    border-radius: .5rem;
+    background-color: var(--green);
+    background-image: url('../assets/login.jpg');
+    background-size: cover;
+
+}
+.loginForm{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 70%;
+    align-self: center;
+    margin-top: 2rem;
+}
+.loginForm input{
+    display: block;
+    margin-bottom: .5rem;
+    width: 100%;
+}
+.loginForm a{
+    color: inherit;
+    align-self: flex-end;
+    font-size: 80%;
+}
+.loginForm input.submit{
+    width: 6rem;
+    margin: .5rem auto;
+    background: var(--green);
+    color: var(--light-gray);
+    border-radius: .5rem;
+    padding: 0.3rem;
+}
+.alert{
+    background: var(--red);
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--light-gray);
+    border-radius: .5rem;
+    padding: 0 0.3rem;
+}
+
+@media screen and (min-width: 50rem){
+
+    main.login{
+        width: 60%;
+    }
+}
