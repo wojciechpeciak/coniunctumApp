@@ -9,7 +9,7 @@ const path = require('path');
 const fileUpload = require('express-fileupload');
 
 
-const port = process.env.PORT || 5000;
+const port = 5000;
 const pathToStoreImages = '/client/public/userImages';
 
 /* ****************** */
