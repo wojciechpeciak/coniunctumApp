@@ -2,8 +2,8 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode'; 
 
 let localhostIp = '10.182.154.37';
-const inHomeLocalhost = 'localhost';
-localhostIp = inHomeLocalhost + (process.env.PORT || '5000');
+const inHomeLocalhost = 'localhost:';
+localhostIp = inHomeLocalhost + process.env.PORT;
 
 export const register = newUser => {
     return axios
