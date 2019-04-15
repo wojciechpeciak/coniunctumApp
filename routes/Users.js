@@ -786,8 +786,8 @@ users.post('/upload', (req, res) => {
         api_key: '855874492865595',
         api_secret: 'El7L2XtTtAu9eec41JAd8uOS_y0'
     });*/
-
-    imgFile.mv(`${__dirname}/../client/build/userImg/${uniqueFilename}.jpg`, (err) => {
+console.log('test path = ' + `${__dirname}/../client/build/userImg/${uniqueFilename}.jpg`, )
+    imgFile.mv(`./client/build/userImg/${uniqueFilename}.jpg`, (err) => {
         console.log(err);
         /*cloudinary.uploader.upload(
             `${__dirname}/uploads/${uniqueFilename}.jpg`,
