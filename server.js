@@ -10,7 +10,7 @@ const fileUpload = require('express-fileupload');
 
 
 const port = process.env.PORT || 5000;
-const pathToStoreImages = '../client/public/userImages';
+const pathToStoreImages = '/client/public/userImages';
 
 /* ****************** */
 app.use(bodyParser.json( { limit: '50mb', extended: true } ));
@@ -23,7 +23,7 @@ app.use(
 app.use(fileUpload({
     createParentPath: true
 }));
-app.use(express.static(path.join(__dirname, '/../client/build')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 // middelware for socket.io file upload
 app.use(siofu.router);
@@ -43,7 +43,7 @@ app.get('/test', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/../client/build/index.html'));
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 //socket io and expres server listening

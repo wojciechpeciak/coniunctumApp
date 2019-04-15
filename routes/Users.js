@@ -4,18 +4,12 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const ObjectId = require('mongoose').Types.ObjectId;
-const multer = require('multer');
 
 const Relationship = require('../models/Relationship');
 users.use(cors());
 
 process.env.SECRET_KEY = 'secret';
 
-// middelware for multer - instead of siofu
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) { cb(null, 'uploads/')},
-    filename: function(req, file, cb) { console.log(file); cb(null, file.originalname+Math.ceil(Math.random * 100))}
-});
 
 /*Relationship.findOneAndUpdate(
     {
