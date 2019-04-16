@@ -25,7 +25,7 @@ class Calendar extends React.Component {
       super(props);
       
       this.state = {
-        month: moment(),
+        month: moment().startOf('day'),
         selected: moment().startOf('day'),
         monthlyEvents: []
       };

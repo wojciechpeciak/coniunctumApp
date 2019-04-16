@@ -791,18 +791,19 @@ function makeid(length) {
 
   function getMonthArray(pickedDate) {
     const picked = new Date(pickedDate);
+    picked.setHours(0,0,0,0);
 
-    const monthStart = new Date(picked.getTime());
+    const monthStart = new Date(picked.toISOString());
     monthStart.setDate(1);
 
-    const monthEnd = new Date(picked.getTime());
+    const monthEnd = new Date(picked.toISOString);
     monthEnd.setMonth(picked.getMonth() + 1);
     monthEnd.setDate(0);
     
     const monthArray = [];
-    for (let currentDay = new Date(monthStart.getTime()); currentDay <= monthEnd; currentDay.setDate(currentDay.getDate() + 1)) {
+    for (let currentDay = new Date(monthStart.toISOString()); currentDay <= monthEnd; currentDay.setDate(currentDay.getDate() + 1)) {
       monthArray.push({
-        date: new Date(currentDay.getTime()),
+        date: new Date(currentDay.toISOString()),
         event:          null,
         menstruation:   null,
         sex:            null,
