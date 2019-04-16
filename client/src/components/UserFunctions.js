@@ -1,10 +1,6 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'; 
 
-let localhostIp = '10.182.154.37';
-const inHomeLocalhost = 'localhost:5000';
-localhostIp = inHomeLocalhost;
-
 export const register = newUser => {
     return axios
         .post('/users/register', {
@@ -298,7 +294,7 @@ export const updateSettings = (relationshipId, userId, configObj) => {
 
 export const upload = data => {
     return axios
-        .post('/users/upload', data)
+        .post('/upload', data)
         .then(response => {
             return response.data;
         })

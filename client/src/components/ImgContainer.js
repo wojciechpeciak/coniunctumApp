@@ -20,7 +20,7 @@ class ImgContainer extends Component {
     render(){
 
         // quickfix, because of realtive paths
-        const imgUrl = preURL + (this.props.message.conversation.content.replace('..\\client\\public\\userImages\\', '/'));
+        const imgUrl = this.props.message.conversation.content;
 
         const fullScreen = 
             <div className="fullScreen">

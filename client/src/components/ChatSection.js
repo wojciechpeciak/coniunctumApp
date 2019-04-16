@@ -5,8 +5,6 @@ import MessageBar from './MessageBar';
 import {MESSAGE_RECIEVED, USER_CONNECTED} from '../Events'
 import Message from './Message';
 
-const socketUrl = 'http://localhost:' + (process.env.PORT || '5000');
-
 
 class ChatSection extends Component{
     constructor(props){

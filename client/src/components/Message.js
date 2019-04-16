@@ -7,7 +7,7 @@ class Message extends Component{
     render() {
         const optionsProps = { socket: this.props.socket, message: this.props.message, relationshipId: this.props.user.relationshipId };
         // quickfix, because of realtive paths
-        const imgUrl = preURL + (this.props.message.content.replace('..\\client\\public\\userImages\\', '/'));
+        const imgUrl = this.props.message.content;
         /*key={this.props.key} */
         return (
             <div
