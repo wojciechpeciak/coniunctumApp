@@ -726,7 +726,7 @@ export const CALENDAR = {
         en: 'Me'
     },
     LABEL_long_partner: {
-        pl: 'Partner(ka)',
+        pl: 'Partner',
         en: 'Partner'
     },
     LABEL1: {
