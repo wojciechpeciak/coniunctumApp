@@ -108,7 +108,7 @@ class RelatinshipCards extends Component{
         const defaultObj = { title: '', content: ''};
         const confirmation = (
             <div className="confirmation">
-                <p></p>
+                <p>{RELATIONSHIPCARD.CONFIRMATION1[lang]}</p>
             </div>
         );
         const headersObj = {

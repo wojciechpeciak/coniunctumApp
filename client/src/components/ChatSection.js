@@ -13,7 +13,7 @@ class ChatSection extends Component{
         super(props);
 
         this.state = {
-            socket: io(socketUrl),
+            socket: io('/'),
             messages: []
         };
 
