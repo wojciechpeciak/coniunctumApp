@@ -5,7 +5,7 @@ import MessageBar from './MessageBar';
 import {MESSAGE_RECIEVED, USER_CONNECTED} from '../Events'
 import Message from './Message';
 
-const socketUrl = 'https://localhost:5000';
+const socketUrl = 'https://localhost';
 
 
 class ChatSection extends Component{
