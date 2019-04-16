@@ -796,7 +796,7 @@ function makeid(length) {
     const monthStart = new Date(picked.toISOString());
     monthStart.setDate(1);
 
-    const monthEnd = new Date(picked.toISOString);
+    const monthEnd = new Date(picked.toISOString());
     monthEnd.setMonth(picked.getMonth() + 1);
     monthEnd.setDate(0);
     
