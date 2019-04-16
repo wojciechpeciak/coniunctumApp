@@ -7,7 +7,7 @@ localhostIp = inHomeLocalhost;
 
 export const register = newUser => {
     return axios
-        .post('https://'+localhostIp+'/users/register', {
+        .post('/users/register', {
             ...newUser
         })
         .then(response => {
@@ -17,7 +17,7 @@ export const register = newUser => {
 
 export const checkEmail = email => {
     return axios
-        .get('https://'+localhostIp+'/users/login', {
+        .get('/users/login', {
             params: {
                 email: email
             }
@@ -32,7 +32,7 @@ export const checkEmail = email => {
 
 export const login = user => {
     return axios
-        .post('https://'+localhostIp+'/users/login', {
+        .post('/users/login', {
             email: user.email,
             password: user.password
         })
@@ -52,7 +52,7 @@ export const getBigDate = user => {
     const {relationshipId, userId} = user;
 
     return axios
-        .get('https://'+localhostIp+'/users/BigDate', {
+        .get('/users/BigDate', {
             params: {
                 relationshipId: relationshipId.toString(),
                 userId: userId
@@ -68,7 +68,7 @@ export const getBigDate = user => {
 
 export const getPartnersLabels = user => {
     return axios
-        .get('https://'+localhostIp+'/users/PartnersLabels', {
+        .get('/users/PartnersLabels', {
             params: {
                 relationshipId: user.relationshipId,
                 userId: user.userId
@@ -84,7 +84,7 @@ export const getPartnersLabels = user => {
 
 export const getLibrary = relationshipId => {
     return axios
-        .get('https://'+localhostIp+'/users/library', {
+        .get('/users/library', {
             params: {
                 relationshipId: relationshipId
             }
@@ -99,7 +99,7 @@ export const getLibrary = relationshipId => {
 
 export const getInvitCode = relationshipId => {
     return axios
-        .get('https://'+localhostIp+'/users/InvitCode', {
+        .get('/users/InvitCode', {
             params: {
                 relationshipId: relationshipId
             }
@@ -114,7 +114,7 @@ export const getInvitCode = relationshipId => {
 
 export const pairPartner = (relationshipId, invitCode) => {
     return axios
-        .post('https://'+localhostIp+'/users/pairPartner', {
+        .post('/users/pairPartner', {
             relationshipId: relationshipId,
             invitCode: invitCode
         })
@@ -128,7 +128,7 @@ export const pairPartner = (relationshipId, invitCode) => {
 
 export const getRelationshipCard = (relationshipId, userId, cardName) => {
     return axios
-        .get('https://'+localhostIp+'/users/relationshipCard', {
+        .get('/users/relationshipCard', {
             params: {
                 relationshipId: relationshipId,
                 userId: userId,
@@ -145,7 +145,7 @@ export const getRelationshipCard = (relationshipId, userId, cardName) => {
 
 export const updateRelationshipCard = (relationshipId, userId, cardArray, cardName) => {
     return axios
-        .post('https://'+localhostIp+'/users/relationshipCard', {
+        .post('/users/relationshipCard', {
             relationshipId: relationshipId,
             userId: userId,
             cardArray: cardArray,
@@ -161,7 +161,7 @@ export const updateRelationshipCard = (relationshipId, userId, cardArray, cardNa
 
 export const getAnniversaries = (relationshipId) => {
     return axios
-        .get('https://'+localhostIp+'/users/anniversaries', {
+        .get('/users/anniversaries', {
             params: {
                 relationshipId: relationshipId,
             }
@@ -176,7 +176,7 @@ export const getAnniversaries = (relationshipId) => {
 
 export const updateAnniversaries = (relationshipId, cardArray) => {
     return axios
-        .post('https://'+localhostIp+'/users/anniversaries', {
+        .post('/users/anniversaries', {
             relationshipId: relationshipId,
             cardArray: cardArray
         })
@@ -190,7 +190,7 @@ export const updateAnniversaries = (relationshipId, cardArray) => {
 
 export const createEvent = (relationshipId, event, currentPickedDate) => {
     return axios
-        .post('https://'+localhostIp+'/users/dailyEvents', {
+        .post('/users/dailyEvents', {
             relationshipId: relationshipId,
             event: event,
             currentPickedDate: currentPickedDate
@@ -205,7 +205,7 @@ export const createEvent = (relationshipId, event, currentPickedDate) => {
 
 export const getDailyEvents = (relationshipId, currentPickedDate) => {
     return axios
-        .get('https://'+localhostIp+'/users/dailyEvents', {
+        .get('/users/dailyEvents', {
             params: {
                 relationshipId: relationshipId,
                 currentPickedDate:currentPickedDate
@@ -220,7 +220,7 @@ export const getDailyEvents = (relationshipId, currentPickedDate) => {
 
 export const updateEvent = (relationshipId, event, currentPickedDate) => {
     return axios
-        .put('https://'+localhostIp+'/users/dailyEvents', {
+        .put('/users/dailyEvents', {
             relationshipId: relationshipId,
             event: event,
             currentPickedDate: currentPickedDate
@@ -235,7 +235,7 @@ export const updateEvent = (relationshipId, event, currentPickedDate) => {
 
 export const delteEvent = (relationshipId, eventId, currentPickedDate) => {
     return axios
-        .delete('https://'+localhostIp+'/users/dailyEvents', {
+        .delete('/users/dailyEvents', {
             data: {
                 relationshipId: relationshipId,
                 eventId: eventId,
@@ -252,7 +252,7 @@ export const delteEvent = (relationshipId, eventId, currentPickedDate) => {
 
 export const getMonthlyEvents = (relationshipId, currentPickedDate) => {
     return axios
-        .get('https://'+localhostIp+'/users/monthlyEvents', {
+        .get('/users/monthlyEvents', {
             params: {
                 relationshipId: relationshipId,
                 currentPickedDate: currentPickedDate
@@ -267,7 +267,7 @@ export const getMonthlyEvents = (relationshipId, currentPickedDate) => {
 
 export const getSettings = (relationshipId, userId) => {
     return axios
-        .get('https://'+localhostIp+'/users/settings', {
+        .get('/users/settings', {
             params: {
                 relationshipId: relationshipId,
                 userId: userId
@@ -283,7 +283,7 @@ export const getSettings = (relationshipId, userId) => {
 
 export const updateSettings = (relationshipId, userId, configObj) => {
     return axios
-        .post('https://'+localhostIp+'/users/settings', {
+        .post('/users/settings', {
             relationshipId: relationshipId,
             userId: userId,
             configObj: configObj
@@ -298,7 +298,7 @@ export const updateSettings = (relationshipId, userId, configObj) => {
 
 export const upload = data => {
     return axios
-        .post('https://'+localhostIp+'/users/upload', data)
+        .post('/users/upload', data)
         .then(response => {
             return response.data;
         })

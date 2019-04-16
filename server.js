@@ -9,7 +9,7 @@ const path = require('path');
 const fileUpload = require('express-fileupload');
 
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 const pathToStoreImages = '/client/public/userImages';
 
 /* ****************** */
@@ -41,11 +41,11 @@ app.use('/users', Users);
 app.get('/test', (req, res) => {
     res.json({ test: true});
 });
-
+/*
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
-
+*/
 //socket io and expres server listening
 var ioServer = io.listen(
         app.listen(port, () => {
