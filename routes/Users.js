@@ -791,10 +791,13 @@ function makeid(length) {
 
   function getMonthArray(pickedDate) {
     const picked = new Date(pickedDate);
-    picked.setHours(0,0,0,0);
-
+    
     const monthStart = new Date(picked.toISOString());
-    monthStart.setDate(1);
+    // needed in deplotment -> location US ?
+    /*if(process.env.NODE_ENV === 'production'){
+        monthStart.setDate(0);
+    } else*/
+        monthStart.setDate(1);
 
     const monthEnd = new Date(picked.toISOString());
     monthEnd.setMonth(picked.getMonth() + 1);
@@ -830,10 +833,10 @@ function makeid(length) {
 
 
   function setContraceptionEvent(dayDate, beginning, daysOnPill, daysOffPill){
+    beginning.setHours(0,0,0,0);
+
     if (Math.floor( dayDate.getTime() / (24 * 60 * 60 * 1000) ) - Math.floor( beginning.getTime() / (24 * 60 * 60 * 1000) ) >= 0) {
         // past days since last whole cycle
-        const temp = (new Date(beginning.getTime())).toISOString();
-        const temp2 = (new Date(dayDate.getTime())).toISOString();
 
         const pastDays = Math.round( (dayDate.getTime() - beginning.getTime()) / (24 * 60 * 60 * 1000) ) % (daysOnPill + daysOffPill) + 1;
         //return menstruation event
