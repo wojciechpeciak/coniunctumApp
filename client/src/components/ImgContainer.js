@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import closeView from '../assets/error.png';
-const preURL = './userImages';
 
 class ImgContainer extends Component {
 

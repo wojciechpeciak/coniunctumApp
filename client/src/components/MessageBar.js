@@ -3,7 +3,6 @@ import {MESSAGE_SENT} from '../Events';
 import sendIcon from '../assets/sent-mail.png';
 import imageIcon from '../assets/image.png';
 import { upload } from './UserFunctions';
-const SocketIOFileUpload = require('socketio-file-upload/client');
 
 class MessageBar extends Component{
 
@@ -13,37 +12,13 @@ class MessageBar extends Component{
         this.state={
             author: this.props.user.nickname,
             messageContent:'',
-            errors: {}
+            errors: {},
+            isUploading: false
         }
 
         this.onchange = this.onchange.bind(this);
         this.onsubmit = this.onsubmit.bind(this);
         this.uploadImage = this.uploadImage.bind(this);
-    }
-
-    /*componentWillMount(){
-        if(localStorage.usertoken === undefined) {
-        } else {
-            const token = localStorage.usertoken;
-            const decoded = jwt_decode(token);
-            this.setState({
-                author: decoded.nickname
-            });
-        }
-    }*/
-
-    componentDidMount(){
-       /* // file uploader part
-        const uploader = new SocketIOFileUpload(this.props.socket)
-
-        uploader.listenOnInput(
-            document.getElementById("img")
-            );
-        // On upload start add author and send message
-        uploader.addEventListener("start", (event) => {
-            event.file.meta.author = this.state.author;
-            event.file.meta.relationshipId = this.props.user.relationshipId;
-        });*/
     }
 
     onchange(e){
@@ -65,116 +40,72 @@ class MessageBar extends Component{
         }
     }
 
-    validateFoto(e) {
-        if (e.target.files.length === 0) {
-                //this.setState({fotoTag: <p id='userImgView'>No file selected for upload</p>});
-        } else if ( this.validFileType(e.target.files[0]) ) {
-            let file = e.target.files[0];
-            let reader = new FileReader();
-            // resize foto
-            let img = document.createElement("img");
-
-            reader.onload = (e) => {img.src = e.target.result};
-            // main resize logic
-            reader.onloadend = (e) => {
-                let canvas=document.createElement("canvas");
-                let context=canvas.getContext("2d");
-                context.drawImage(img, 0, 0);
-
-                const MAX_WIDTH = 200;
-                const MAX_HEIGHT = 200;
-                let width = img.width;
-                let height = img.height;
-
-                if (width > height) {
-                    if (width > MAX_WIDTH) {
-                    height *= MAX_WIDTH / width;
-                    width = MAX_WIDTH;
-                    }
-                } else {
-                    if (height > MAX_HEIGHT) {
-                    width *= MAX_HEIGHT / height;
-                    height = MAX_HEIGHT;
-                    }
-                }
-                
-                canvas.width = width;
-                canvas.height = height;
-                context = canvas.getContext("2d");
-                context.drawImage(img, 0, 0, width, height);
-
-                const temp = canvas.toDataURL('image/jpeg', 0.9);
-                this.props.onFileUpload(temp);
-                this.setState({ fileName: file.name });
-            }
-            reader.readAsDataURL(e.target.files[0]);
-        }
-        
-    }
-
     uploadImage(e){
-
-        e.preventDefault();
-
         const inputNode = this.uploadInput;
         const { relationshipId, nickname} = this.props.user;
+        const component = this;
+        e.preventDefault();
+        
         if(inputNode.files[0] && this.validFileType(inputNode.files[0])){
-
-            let file = inputNode.files[0];
-            let reader = new FileReader();
-            // resize foto
-            let img = document.createElement("img");
-
-            reader.onload = (e) => {img.src = e.target.result};
-            // main resize logic
-            reader.onloadend = (e) => {
-                let canvas=document.createElement("canvas");
-                let context=canvas.getContext("2d");
-                context.drawImage(img, 0, 0);
-
-                const MAX_WIDTH = 1024;
-                const MAX_HEIGHT = 1024;
-                let width = img.width;
-                let height = img.height;
-
-                if (width > height) {
-                    if (width > MAX_WIDTH) {
-                    height *= MAX_WIDTH / width;
-                    width = MAX_WIDTH;
-                    }
-                } else {
-                    if (height > MAX_HEIGHT) {
-                    width *= MAX_HEIGHT / height;
-                    height = MAX_HEIGHT;
-                    }
-                }
-                
-                canvas.width = width;
-                canvas.height = height;
-                context = canvas.getContext("2d");
-                context.drawImage(img, 0, 0, width, height);
-
-                const temp = canvas.toBlob( (blob) => {
-
-                    const data = new FormData();
-                    data.append('file', blob);
-                    data.append('relationshipId', relationshipId);
-                    data.append('author', nickname);
-
-                    upload(data)
-                    .then(res => {
-                        if(res.uploaded !== undefined){
-                            inputNode.value = '';
-
-                            console.log('image upload done');
-                        }
-                    })
-                }, 'image/jpeg');
-                //this.props.onFileUpload(temp);
-                //this.setState({ fileName: file.name });
-            }
-            reader.readAsDataURL(file);
+            this.setState({ isUploading: true}, () => {
             
+                let file = inputNode.files[0];
+                let reader = new FileReader();
+                // resize foto
+                let img = document.createElement("img");
+
+                reader.onload = (e) => {img.src = e.target.result};
+                // main resize logic
+                reader.onloadend = (e) => {
+                    let canvas=document.createElement("canvas");
+                    let context=canvas.getContext("2d");
+                    context.drawImage(img, 0, 0);
+
+                    const MAX_WIDTH = 1024;
+                    const MAX_HEIGHT = 1024;
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > MAX_WIDTH) {
+                        height *= MAX_WIDTH / width;
+                        width = MAX_WIDTH;
+                        }
+                    } else {
+                        if (height > MAX_HEIGHT) {
+                        width *= MAX_HEIGHT / height;
+                        height = MAX_HEIGHT;
+                        }
+                    }
+                    
+                    canvas.width = width;
+                    canvas.height = height;
+                    context = canvas.getContext("2d");
+                    context.drawImage(img, 0, 0, width, height);
+
+                    canvas.toBlob( (blob) => {
+
+                        const data = new FormData();
+                        data.append('file', blob);
+                        data.append('relationshipId', relationshipId);
+                        data.append('author', nickname);
+
+                        upload(data)
+                        .then(res => {
+                            if(res.uploaded !== undefined){
+                                inputNode.value = '';
+                                component.setState({isUploading: false});
+                                console.log('image upload done');
+                            }
+                        }).catch( err => {
+                            if (err) 
+                                component.setState({ isUploading: false });
+                        })
+                    }, 'image/jpeg');
+                }
+                reader.readAsDataURL(file);
+                
+            });
         }
     }
 
@@ -201,6 +132,7 @@ class MessageBar extends Component{
                     accept="image/*"
                     ref={(ref) => (this.uploadInput = ref)}
                     onChange={this.uploadImage}/>
+                    {this.state.isUploading && <div className='loadBackground'><div className="sp sp-circle"></div></div>}
                 </div>
 
                 <form className="messageForm" onSubmit={this.onsubmit}>

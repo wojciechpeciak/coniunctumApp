@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import MessageOptions from './MessageOptions';
-const preURL = './userImages';
 
 class Message extends Component{
 
