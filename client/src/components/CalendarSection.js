@@ -45,6 +45,7 @@ class Calendar extends React.Component {
             }
         });
     }
+    
 
     refreshMonthlyView(){
         getMonthlyEvents(this.props.user.relationshipId, this.state.selected.toISOString())
@@ -91,10 +92,23 @@ class Calendar extends React.Component {
     }
     
     select(day) {
-      this.setState({
-        selected: day.date,
-        month: day.date.clone(),
-      });
+        if(day.date.month() !== this.state.month.month()){
+            getMonthlyEvents(this.props.user.relationshipId, day.date.toISOString())
+            .then( monthArray => {
+                if (monthArray !== undefined) {
+                    this.setState({
+                        monthlyEvents: monthArray,
+                        selected: day.date,
+                        month: day.date.clone(),
+                    })
+                }
+            });
+        }else{
+            this.setState({
+                selected: day.date,
+                month: day.date.clone(),
+            });
+        }
     }
   
     renderWeeks() {

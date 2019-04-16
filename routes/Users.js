@@ -10,32 +10,6 @@ users.use(cors());
 
 process.env.SECRET_KEY = 'secret';
 
-
-/*Relationship.findOneAndUpdate(
-    {
-        _id: ObjectId('5ca83b9dc6ecf608f8d4bdfc'),
-        'users._id': ObjectId('5ca83b9dc6ecf608f8d4bdfd')
-    },
-    {
-        $set: {
-            'users.$.settings': {
-                lang: 'en',
-                contraceptionCycle: true,
-                menstrualCycle: true,
-                intercourseHistory: true
-            }
-        }
-    },
-    {
-        new: true
-    }
-).then( updatedRelation => {
-    console.log(updatedRelation);
-})
-.catch(err => {
-    console.log('Error during user menstruation updating: ' + err);
-});*/
-
 users.post('/register', (req, res) => {
     // Prepare Relationship entity
 
@@ -793,11 +767,8 @@ function makeid(length) {
     const picked = new Date(pickedDate);
     
     const monthStart = new Date(picked.toISOString());
-    // needed in deplotment -> location US ?
-    /*if(process.env.NODE_ENV === 'production'){
-        monthStart.setDate(0);
-    } else*/
-        monthStart.setDate(1);
+    
+    monthStart.setDate(1);
 
     const monthEnd = new Date(picked.toISOString());
     monthEnd.setMonth(picked.getMonth() + 1);
@@ -818,6 +789,8 @@ function makeid(length) {
   }
 
   function setMenstruationEvent(dayDate, beginning, periodDays, cycleDays) {
+    beginning.setHours(0,0,0,0);
+
     if (Math.floor( dayDate.getTime() / (24 * 60 * 60 * 1000) ) - Math.floor( beginning.getTime() / (24 * 60 * 60 * 1000) ) >= 0) {
         // past days since last whole cycle
         let pastDays = Math.floor((dayDate.getTime() - beginning.getTime()) % (cycleDays * 24 * 60 * 60 * 1000) / (24 * 60 * 60 * 1000));
