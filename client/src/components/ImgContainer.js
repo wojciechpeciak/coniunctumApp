@@ -19,12 +19,12 @@ class ImgContainer extends Component {
     render(){
 
         // quickfix, because of realtive paths
-        const imgUrl = this.props.message.conversation.content;
+        const imgUrl = this.props.message.conversation.content.replace('upload', 'upload/if_w_gt_400_and_h_lt_400,w_400/if_h_gt_400,h_400');
 
         const fullScreen = 
             <div className="fullScreen">
                 <input type="image" src={closeView} alt="close view" onClick={this.toggleFullScreen}/>
-                <img src={imgUrl} alt="userPhoto"/>
+                <img src={this.props.message.conversation.content} alt="userPhoto"/>
             </div>
         return (
             <div className="imgContainer">
