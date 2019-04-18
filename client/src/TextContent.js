@@ -77,6 +77,10 @@ export const ABOUT = {
         pl: 'To rowiązanie nie jest rozwiązaniem komercyjnym. Zostało stworzone jednynie do celów naukowych. Autor nie uzyskuje żadnych matrialnych korzyście z tego tytułu.',
         en: 'This solution is not a commercial solution. It was created strictly for scientific purposes. The author does not derive any material profits from it.'
     },
+    H2 : {
+        pl: 'Uznanie',
+        en: 'Credits'
+    },
     P3_icon_1: {
         pl: 'Ikona wykonan przez',
         en: 'Icon made by'

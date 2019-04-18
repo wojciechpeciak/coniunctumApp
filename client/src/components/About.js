@@ -34,7 +34,7 @@ class About extends Component {
                         </div>
                     </section>
                     <section className="credits">
-                        <h2>Credits</h2>
+                        <h2>{ABOUT.H2[lang]}</h2>
                         <div>
                         <p>
                             <img src="https://image.flaticon.com/icons/svg/766/766583.svg" alt="Heart icon"/>
