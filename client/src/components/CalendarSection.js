@@ -18,12 +18,15 @@ import sex from '../assets/bed.png';
 import unprotectedSex from '../assets/condomDown.png';
 import protectedSex from '../assets/condomUp.png';
 import { CALENDAR, REGISTER } from '../TextContent';
+import 'moment/locale/pl';
+import 'moment/locale/en-gb';
+
 
 
 class Calendar extends React.Component {
     constructor(props) {
       super(props);
-      
+      moment.locale(this.props.user.lang);
       this.state = {
         month: moment().startOf('day'),
         selected: moment().startOf('day'),
@@ -146,7 +149,6 @@ class Calendar extends React.Component {
       const {
         month,
       } = this.state;
-  
       return <span className="month-label">{month.format("MMMM YYYY")}</span>;
     }
   

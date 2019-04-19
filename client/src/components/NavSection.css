@@ -27,8 +27,11 @@
     border-right: 1px solid var(--dark-gray);
     cursor: pointer;
 }
+button.navActive{
+    background: var(--light-gray);
+}
 
-.navigation button.active, .navOpen button.active, button.navActive{
+.navigation button.active, .navOpen button.active{
     background: var(--blue);
     color: #fff;
 }

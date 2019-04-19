@@ -10,9 +10,6 @@ import AnniversariesCard from './AnniversariesCard';
 import Calendar from './CalendarSection';
 import Settings from './Settings';
 import { CONIUNCTUM } from '../TextContent';
-import moment from 'moment';
-import 'moment/locale/pl';
-import 'moment/locale/en-gb';
 
 
 
@@ -29,7 +26,7 @@ constructor(props){
             partner: { userImg: '', nickname: ''}
         },
         invitCode: '',
-        currentComponent: 'chat'
+        currentComponent: 'calendar'
     };
 
     this.setUser = this.setUser.bind(this);
@@ -44,9 +41,22 @@ constructor(props){
     setComponent(e){
         this.setState({currentComponent: e.target.name});
     }
-
+    
     componentWillMount(){
-        this.setUser();
+        const decoded = resolveUserToken(localStorage);
+        if(decoded === false) {
+            this.props.history.push('/login/pl');
+        } else {
+            const user = {
+                relationshipId: decoded.relationshipId,
+                userId: decoded.userId,
+                email: decoded.email,
+                nickname: decoded.nickname,
+                sex: decoded.sex
+            };
+
+            this.setState({user});
+        }
     }
 
     componentDidMount(){
@@ -55,8 +65,6 @@ constructor(props){
         .then( res => {
             if (res !== undefined) {
                 this.setState( prevState => { 
-                    // set date lang
-                    moment.locale(res.lang);
                     return {
                         user: {
                             lang: res.lang,
@@ -123,7 +131,6 @@ constructor(props){
             'settings': CONIUNCTUM.COMPONENTS_NAME9[this.state.user.lang]
         };
 
-
         return (
             <div className="container">
                 <HeaderBar bigDate={this.state.bigDate} currentComponent={componentsNames[this.state.currentComponent]} user={this.state.user} />
@@ -150,7 +157,7 @@ constructor(props){
                         'favorites': <RelatinshipCards user={this.state.user} cardName='favorites' />,
                         'gift': <RelatinshipCards user={this.state.user} cardName='gift' />,
                         'anniversaries': <AnniversariesCard user={this.state.user} />,
-                        'calendar': <Calendar user={this.state.user} />,
+                        'calendar': this.state.user.lang && <Calendar user={this.state.user} />,
                         'settings': <Settings user={this.state.user} />
 
                             

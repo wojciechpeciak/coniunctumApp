@@ -127,7 +127,7 @@ class Settings extends Component{
                         <p className={this.state.intercourseHistory === false? 'option checked' : 'option'}>OFF</p>
                     </div>
                 </button>
-                { this.props.user.sex === 'female' && <div className={this.state.contraceptionConfig ? "cycleConfig configOpen" : "cycleConfig"}>
+                { /*this.props.user.sex === 'female' &&*/ <div className={this.state.contraceptionConfig ? "cycleConfig configOpen" : "cycleConfig"}>
                     <button className="cycleSetting" onClick={this.toggleBool} name='contraceptionConfig'><p>{SETTINGS.P3[lang]}</p></button>
                     { this.state.contraceptionConfig && 
                         <Fragment>
@@ -149,7 +149,7 @@ class Settings extends Component{
                         </div>
                         </Fragment>}
                  </div>}
-                { this.props.user.sex === 'female' && <div className={this.state.menstrualConfig ? "cycleConfig configOpen" : "cycleConfig"}>
+                { /*this.props.user.sex === 'female' &&*/ <div className={this.state.menstrualConfig ? "cycleConfig configOpen" : "cycleConfig"}>
                     <button className="cycleSetting" onClick={this.toggleBool} name='menstrualConfig'><p>{SETTINGS.P4[lang]}</p></button>
                     { this.state.menstrualConfig && 
                         <Fragment>

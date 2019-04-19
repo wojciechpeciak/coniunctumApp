@@ -137,6 +137,7 @@
     .galleryInfo{
         display: inline-block;
         margin:  0 .5rem;
+        cursor: pointer;
     }
     .extraTools, .libraryBar>input{
         margin-right: 1rem;
