@@ -18,23 +18,23 @@ class Register extends Component {
             sex: 'female',
             birthday: '',
             anniversaries: [
-                {
+               /* {
                     title: REGISTER.step3_item[this.props.match.params.lang],
                     date: ''
-                }
+                }*/
             ],
             favorites: [
-                {
+               /* {
                     title: REGISTER.step4_item1[this.props.match.params.lang],
                     content: ''
                 },
                 {
                     title: REGISTER.step4_item2[this.props.match.params.lang],
                     content: ''
-                }
+                }*/
             ],
             wardrobe: [
-                {
+               /* {
                     title: REGISTER.step5_item1[this.props.match.params.lang],
                     content: ''
                 },
@@ -45,10 +45,10 @@ class Register extends Component {
                 {
                     title: REGISTER.step5_item3[this.props.match.params.lang],
                     content: ''
-                }
+                }*/
             ],
             lifeInfo: [
-                {
+               /* {
                     title: REGISTER.step6_item1[this.props.match.params.lang],
                     content: ''
                 },
@@ -59,7 +59,7 @@ class Register extends Component {
                 {
                     title: REGISTER.step6_item3[this.props.match.params.lang],
                     content: ''
-                },
+                },*/
             ],
             /************/
             passwordRepeat: '',
@@ -147,7 +147,7 @@ class Register extends Component {
 
     _next(){
         this.setState(prevState => 
-            ({currentStep: prevState.currentStep >= 5? 6 : prevState.currentStep+1 })
+            ({currentStep: prevState.currentStep >= 1? 2 : prevState.currentStep+1 })
         );
     }
 
@@ -169,7 +169,7 @@ class Register extends Component {
     }
 
     get nextButton(){
-        if (this.state.currentStep < 6) {
+        if (this.state.currentStep < 2) {
             return (
                 <button className="formButton" type="button" onClick={ () => { if(this.validate()) this._next();}}>
                     {REGISTER.BUTTON2_next[this.props.match.params.lang]}
@@ -180,7 +180,7 @@ class Register extends Component {
     }
 
     get submitButton(){
-        if (this.state.currentStep === 6){
+        if (this.state.currentStep === 2){
             return (
                 <button className="formButton" type="submit" onSubmit={this.onSubmit}>{REGISTER.BUTTON3_submit[this.props.match.params.lang]}</button>
             );
@@ -198,8 +198,8 @@ class Register extends Component {
         return (
             <div className="registerPage">
                 <Navbar register={true}/>
-                <progress value={this.state.currentStep} max="6"></progress>
-                <div className="progressSteps"> {REGISTER.DIV1_1_step[lang]} {this.state.currentStep} {REGISTER.DIV1_2_step[lang]} 6</div>
+                <progress value={this.state.currentStep} max="2"></progress>
+                <div className="progressSteps"> {REGISTER.DIV1_1_step[lang]} {this.state.currentStep} {REGISTER.DIV1_2_step[lang]} 2</div>
                 <main className="registrationForm" id="mainId">
                     <form onSubmit={this.onSubmit} id='fileFormStep'>
                         <Step1
@@ -212,7 +212,7 @@ class Register extends Component {
                             //onToggle={this.onToggle}
                             onFileUpload={this.onFileUpload}
                         />
-                        <Step3 
+                        {/*<Step3 
                             {...this.state}
                             onChangeArray={this.onChangeArray}
                             onDeleteArray={this.onDeleteArray}
@@ -235,7 +235,7 @@ class Register extends Component {
                             onChangeArray={this.onChangeArray}
                             onDeleteArray={this.onDeleteArray}
                             onAddArray={this.onAddArray}
-                        />
+                        />*/}
                     <div className="formNav">
                         {this.previousButton}
                         {this.nextButton}

@@ -38,7 +38,9 @@
     height: 85%;
     margin-right: .5rem;
 }
-
+.galleryInfo{
+    display: none;
+}
 .extraTools>input{
     height: 100%;
     position: relative;
@@ -128,7 +130,14 @@
     .counter{
         display: block;
     }
-
+    .extraTools{
+        display: flex;
+        align-items: center;
+    }
+    .galleryInfo{
+        display: inline-block;
+        margin:  0 .5rem;
+    }
     .extraTools, .libraryBar>input{
         margin-right: 1rem;
     }

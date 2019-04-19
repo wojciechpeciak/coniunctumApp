@@ -164,6 +164,12 @@ class Calendar extends React.Component {
                 </header>
                 {this.renderWeeks()}
             </section>{moment().h}
+            <div className="legend">
+                {this.props.user.intercourseHistory && <div className="legendItem"><img src={sexIcon} alt="Intercorse icon"/><p>{CALENDAR.BUTTON4[this.props.user.lang]}</p></div>}
+                {this.props.user.menstrualCycle && <div className="legendItem"><img src={menstruationPredictIcon} alt="Menstruation icon"/><p>{CALENDAR.BUTTON2[this.props.user.lang]}</p></div>}
+                {this.props.user.menstrualCycle && <div className="legendItem"><img src={ovulationIcon} alt="Fertile icon"/><p>{CALENDAR.P1_legend[this.props.user.lang]}</p></div>}
+                {this.props.user.contraceptionCycle && <div className="legendItem"><img src={pillsPredictIcon} alt="Contraception icon"/><p>{CALENDAR.BUTTON3[this.props.user.lang]}</p></div>}
+            </div>
             <DailyEvents user={this.props.user} pickedDate={this.state.selected} refreshMonthlyView={this.refreshMonthlyView}/>
         </React.Fragment>
       );
@@ -366,10 +372,10 @@ class Calendar extends React.Component {
                 <button className="eventType" onClick={() => this.switchActionType('AddEvent')}>
                     <img src={calendarIcon} alt="calendar icon"/>
                     {CALENDAR.BUTTON1[lang]}</button>
-                {this.props.user.sex === 'female' && this.props.user.menstrualCycle && <button className="eventType" onClick={() => this.switchActionType('EditMenstruation')}>
+                {/*this.props.user.sex === 'female' &&*/ this.props.user.menstrualCycle && <button className="eventType" onClick={() => this.switchActionType('EditMenstruation')}>
                     <img src={menstruationIcon} alt="menstruation icon"/>
                     {CALENDAR.BUTTON2[lang]}</button>}
-                {this.props.user.sex === 'female' && this.props.user.contraceptionCycle && <button className="eventType" onClick={() => this.switchActionType('EditContraception')}>
+                {/*this.props.user.sex === 'female' &&*/ this.props.user.contraceptionCycle && <button className="eventType" onClick={() => this.switchActionType('EditContraception')}>
                     <img src={pillsIcon} alt="contraception icon"/>
                     {CALENDAR.BUTTON3[lang]}</button>}
                 {this.props.user.intercourseHistory && <button className="eventType" onClick={() => this.switchActionType('EditIntercourse')}>

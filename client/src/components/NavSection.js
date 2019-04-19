@@ -74,7 +74,7 @@ class NavSection extends Component{
                                 >{NAVSECTION.BUTTON5[this.props.userObj.lang]}</button>
                             </div>
                             <button 
-                                className={ this.state.navTabActive === 1? 'navActive' : '' }
+                                className={ this.state.navTabActive === 1? 'navActive' : (this.props.currentComponent === 'gift' || this.props.currentComponent === 'lifeInfo' || this.props.currentComponent === 'wardrobe' || this.props.currentComponent === 'favorites' || this.props.currentComponent === 'anniversaries')? 'active' : ''}
                                 onClick={() => this.toggleTab(1)}
                                 >
                                 <img src="https://image.flaticon.com/icons/svg/1530/1530694.svg" alt="relationship icon" id="relationship"/>
@@ -85,6 +85,7 @@ class NavSection extends Component{
                         <section>
                                 <button
                                     onClick={() => this.props.setComponent( { target: { name: 'chat' } } ) } 
+                                    className={this.props.currentComponent === 'chat'? 'active' : ''}
                                 >
                                     <img src="https://image.flaticon.com/icons/svg/126/126500.svg" alt="chat icon" id="chat"/>
                                     <p>{NAVSECTION.BUTTON7[this.props.userObj.lang]}</p>
@@ -93,6 +94,7 @@ class NavSection extends Component{
                         <section>
                             <button
                                 onClick={() => this.props.setComponent( {target: { name: 'calendar'} } ) }
+                                className={this.props.currentComponent === 'calendar'? 'active' : ''}
                             >
                                 <img src="https://image.flaticon.com/icons/svg/747/747310.svg" alt="organize icon" id="organize"/>
                                 <p>{NAVSECTION.BUTTON8[this.props.userObj.lang]}</p>
@@ -110,7 +112,7 @@ class NavSection extends Component{
                                 >{NAVSECTION.BUTTON10[this.props.userObj.lang]}</button>
                             </div>
                             <button
-                                className={ this.state.navTabActive === 4? 'navActive' : '' }
+                                className={ this.state.navTabActive === 4? 'navActive' : this.props.currentComponent === 'settings'? 'active' : ''}
                                 onClick={() => this.toggleTab(4)}
                             >
                                 <img src="https://image.flaticon.com/icons/svg/149/149947.svg" alt="more options" id="more"/>

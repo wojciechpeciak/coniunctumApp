@@ -154,6 +154,18 @@
     bottom: 1px;
     right: calc(50% + .6rem);
 }
+.legend{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.legendItem>img{
+    height: 1rem;
+}
+.legendItem>p{
+    margin: 0 0 0 .2rem;
+    display: inline;
+}
 /*===== Daily events ========*/
 .dailyEvents{
     display: flex;

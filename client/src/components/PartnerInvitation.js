@@ -72,7 +72,7 @@ class PartnerInvitation extends Component{
                 <p>{PARTNERINVIT.P2[this.props.lang]}</p>
                 { this.state.incorrectCode && alert }
                 <form className="invitInput" onSubmit={this.onSubmit}>
-                    <label htmlFor="invitCode">Partner's code</label>
+                    <label htmlFor="invitCode">{PARTNERINVIT.LABEL1[this.props.lang]}</label>
                     <input type="text" name="invitCode" id="invitCode" value={this.state.invitCode} onChange={this.onChange}/>
                     <button type="submit" className='greenButton'>{PARTNERINVIT.BUTTON1[this.props.lang]}</button>
                 </form>

@@ -35,6 +35,7 @@ class HeaderBar extends Component{
                     {bigDate}
                 </p>
                 <div className="extraTools">
+                    <p className="galleryInfo">{HEADERBAR.P2_library[this.props.user.lang]}</p>
                     <input type="image" src={galleryIcon} alt="gallery" onClick={this.toggleLibraryVisible}/>
                     {this.state.libraryVisible && <Library toggle={this.toggleLibraryVisible} relationshipId={this.props.user.relationshipId} lang={this.props.user.lang}/>}
                 </div>

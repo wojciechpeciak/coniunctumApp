@@ -27,9 +27,12 @@
     border-right: 1px solid var(--dark-gray);
     cursor: pointer;
 }
-button.navActive{
-    background: var(--light-gray);
+
+.navigation button.active, .navOpen button.active, button.navActive{
+    background: var(--blue);
+    color: #fff;
 }
+
 .navOpen{
     position: absolute;
     bottom: var(--navBar-bottom-height);
@@ -68,7 +71,7 @@ button.navActive{
     width: 90%;
     cursor: pointer;
 }
-.navOpen button:active, .navOpen button:hover{
+.navOpen button:active, .navOpen button:hover  {
     background: var(--dark-gray);
     color: #fff;
 }
@@ -142,7 +145,11 @@ button.navActive{
         background: var(--dark-gray);
         color: #fff;
     }
-    .navActive>img{
+    button.active{
+        background: var(--blue);
+        color: #fff;
+    }
+    .navActive>img, button.active>img{
         filter: invert(1);
     }
     .navigation button>p{

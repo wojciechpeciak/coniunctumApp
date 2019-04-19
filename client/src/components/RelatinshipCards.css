@@ -3,8 +3,9 @@
     height: 2rem;
     background: var(--green);
     border: 1px solid var(--dark-gray);
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--light-gray);
+    cursor: pointer;
 }
 #leftButton.active{
     border-left: none;
@@ -54,6 +55,9 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+}
+.partnerCardItems>h1{
+    text-align: center;
 }
 .partnerListItem{
     margin-bottom: .5rem;

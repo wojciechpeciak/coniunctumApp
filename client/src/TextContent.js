@@ -274,8 +274,8 @@ export const REGISTER = {
         en: 'Entries about your important anniversaries in relationship.'
     },
     step3_P1_2: {
-        pl: 'Możesz pominąć ten krok i dodać wpisy później z karty Związek.',
-        en: 'You can skip this step and add entries later in Relationsip card.'
+        pl: 'Możesz usunąć domyślne pozycje i pominąć ten krok. Poźniejsze dodanie wpisów będzie możliwe z karty Związek.',
+        en: 'You can delete the default items and skip this step. It will be possible to add entries later from the Relationship card.'
     },
     step3_LABEL1: {
         pl: 'Tytuł',
@@ -364,8 +364,8 @@ export const CONIUNCTUM = {
         en: 'Anniversaries'
     },
     COMPONENTS_NAME4: {
-        pl: 'Życzenia prezentowe',
-        en: 'Gift whishes'
+        pl: 'Pomysły prezentowe',
+        en: 'Gift ideas'
     },
     COMPONENTS_NAME5: {
         pl: 'Życiowe informacje',
@@ -406,8 +406,8 @@ export const NAVSECTION = {
         en: 'No partner assigned'
     },
     BUTTON1: {
-        pl: 'Życzenia prezentowe',
-        en: 'Gift whishes'
+        pl: 'Pomysły prezentowe',
+        en: 'Gift ideas'
     },
     BUTTON2: {
         pl: 'Informacje życiowe',
@@ -456,12 +456,12 @@ export const NAVSECTION = {
 }
 export const HEADERBAR = {
     P1_noBigDate: {
-        pl: 'Brak zbliżających się ważnych dat w związku',
-        en: "No relationship's big date in nearest future"
+        pl: 'Brak zbliżających się ważnych rocznic w związku',
+        en: "No relationship's big anniversaries in nearest future"
     },
     P1_BigDate_1: {
-        pl: 'Ważna data: ',
-        en: "Big date: "
+        pl: 'Ważna rocznica: ',
+        en: "Big anniversary: "
     },
     P1_BigDate_2: {
         pl: ' za ',
@@ -472,8 +472,8 @@ export const HEADERBAR = {
         en: ' days'
     },
     P2_library: {
-        pl: 'Galeria konwersacji',
-        en: 'Conversation gallery'
+        pl: 'Galeria czatu',
+        en: 'Chat gallery'
     },
     H1_library: {
         pl: 'Pusta galeria',
@@ -523,6 +523,10 @@ export const PARTNERINVIT = {
         pl: 'Poniżej możesz wprowadzić kod parowania partnera(ki).',
         en: "Below you can submit your partner's pairing code."
     },
+    LABEL1: {
+        pl: 'Kod partnera(ki)',
+        en: "Partner's code"
+    },
     BUTTON1: {
         pl: 'Paruj konta',
         en: 'Pair accounts'
@@ -534,8 +538,8 @@ export const RELATIONSHIPCARD = {
         en: 'Changes submitted'
     },
     H1_gift: {
-        pl: 'Życzenia prezentowe',
-        en: 'Gift whishes'
+        pl: 'Pomysły prezentowe',
+        en: 'Gift ideas'
     },
     P1_wardrobe: {
         pl: 'Wpisy dotyczące rozmiarów ubrań, by pomóc w przypadku zakupów.',
@@ -660,6 +664,10 @@ export const CALENDAR = {
     SPAN7_sun: {
         pl: 'Nd',
         en: 'Sun'
+    },
+    P1_legend: {
+        pl: 'Dni płodne',
+        en: 'Fertile days'
     },
     BUTTON1: {
         pl: 'Wydarzenie kalendarza',
