@@ -19,6 +19,7 @@ class MessageBar extends Component{
         this.onchange = this.onchange.bind(this);
         this.onsubmit = this.onsubmit.bind(this);
         this.uploadImage = this.uploadImage.bind(this);
+        this.sendOnEnter = this.sendOnEnter.bind(this);
     }
 
     onchange(e){
@@ -123,6 +124,11 @@ class MessageBar extends Component{
         return false;
     }
 
+    sendOnEnter(e){
+        if( e.charCode === 13 && !e.shiftKey)
+            this.onsubmit(e)
+    }
+
     render () {
         return (
             <div className='messageBar'>
@@ -141,6 +147,7 @@ class MessageBar extends Component{
                     id="sender" 
                     value={this.state.messageContent}
                     onChange={this.onchange}
+                    onKeyPress={this.sendOnEnter}
                     ></textarea>
                     <input type="image" src={sendIcon} alt="send icon"/>
                 </form>
