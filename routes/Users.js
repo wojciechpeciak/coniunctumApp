@@ -144,13 +144,15 @@ users.get('/BigDate', (req, res) => {
                 anniversaries: 1,
                 "users._id": 1,
                 "users.birthday": 1,
+                "users.settings": 1
             })
         .then(result => {
             const anniversaries = [...result.anniversaries];
 
-            const partnerBirthday = result.users.filter( (elem) => (elem.id !== userId));
-            if (partnerBirthday[0]) {
-                anniversaries.push( { title: "Partner's birthday", date: partnerBirthday[0].birthday});
+            const partner = result.users.find( (elem) => (elem.id !== userId));
+            const currentUserLang = result.users.find( (elem) => (elem.id === userId)).settings.lang;
+            if (partner && partner.birthday) {
+                anniversaries.push( { title: currentUserLang === 'en'? "Partner's birthday" : "Urodziny partnera(ki)", date: partner.birthday});
             }
 
             if(anniversaries.length !== 0){
@@ -239,7 +241,11 @@ users.post('/pairPartner', (req, res) => {
                         conversation: { 
                             $each: partnerRelationship.conversation,
                             $sort: { date: 1 }
-                        } 
+                        },
+                        events: { 
+                            $each: partnerRelationship.events,
+                            $sort: { startDate: 1 }
+                        }
                     },
                     $set: { invitCode: null }
                 },
