@@ -57,6 +57,9 @@
 .arrow:hover {
     background: var(--dkSecondary);
 }
+.arrow:active{
+    color: #000;
+}
 .arrow.previous{
     transform: scaleX(-1);
 }
@@ -252,6 +255,9 @@
     bottom: 0;
     background: var(--light-gray);
     border-radius: 50%;
+}
+.dailyEvents input:active, .dailyEvents input:hover{
+    filter: invert(.4);
 }
 .fullView{
     position: absolute;

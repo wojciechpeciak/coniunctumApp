@@ -26,6 +26,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .openTab img{
@@ -44,6 +45,13 @@
 .extraTools>input{
     height: 100%;
     position: relative;
+}
+.extraTools input:active, .extraTools input:hover{
+    filter: invert(1);
+}
+.imgContainer>input:hover, .imgContainer>input:active{
+    box-shadow: 0 0 7px 0 var(--dark-gray);
+    filter: none;
 }
 /*============== Conversation library ================*/
 .conversationLibrary{

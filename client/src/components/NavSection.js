@@ -46,7 +46,7 @@ class NavSection extends Component{
                     </div>
                     <nav className="navigation">
                         <section>
-                            <div className={ this.state.navTabActive === 1? 'navOpen' : 'navClose' }>
+                            <div className={ this.state.navTabActive === 1? 'navOpen rowView' : 'navClose' }>
                                 <button
                                 className={ this.props.currentComponent === 'gift'? 'active' : '' } 
                                 onClick={(e) => {this.props.setComponent(e); this.toggleTab(1)}} 

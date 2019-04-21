@@ -288,15 +288,15 @@ function Step1(props){
             >
                 <h1 className="title">{REGISTER.step1_H11[props.lang]}</h1>
                 <p>{REGISTER.step1_P1[props.lang]}</p>
+                <p className="required">{REGISTER.P_required[props.lang]}</p>
+
                 <div className="inputSection">
                     <label htmlFor="email">{REGISTER.step1_LABEL1[props.lang]}</label>
                     <input type="email" name="email" id="email" required value={props.email} onChange={(e) => {props.onChange(e); validateEmail(e);}} /*onBlur={validateEmail}*//>
-                    
-                
-                <label htmlFor="password">{REGISTER.step1_LABEL2[props.lang]}</label>
-                <input type="password" name="password" id="password" minLength="8" required value={props.password} onChange={ (e) => {props.onChange(e); validatePassword();}}/>
-                <label htmlFor="passwordRepeat">{REGISTER.step1_LABEL3[props.lang]}</label>
-                <input type="password" name="passwordRepeat" id="passwordRepeat" minLength="8" required value={props.passwordRepeat} onChange={ (e) => { props.onChange(e); validatePassword(); } }/>
+                    <label htmlFor="password">{REGISTER.step1_LABEL2[props.lang]}</label>
+                    <input type="password" name="password" id="password" minLength="8" required value={props.password} onChange={ (e) => {props.onChange(e); validatePassword();}}/>
+                    <label htmlFor="passwordRepeat">{REGISTER.step1_LABEL3[props.lang]}</label>
+                    <input type="password" name="passwordRepeat" id="passwordRepeat" minLength="8" required value={props.passwordRepeat} onChange={ (e) => { props.onChange(e); validatePassword(); } }/>
                 </div>
             </section>
         </Fragment>
@@ -397,6 +397,8 @@ class Step2 extends Component{
                     <h1 className="title">{REGISTER.step2_H11[this.props.lang]}</h1>
                     <p>{REGISTER.step2_P3[this.props.lang]}</p>
                     {/* foto upload */}
+                    <p className="required">{REGISTER.P_required[this.props.lang]}</p>                        
+
                     <div className="fileSection">
                         <div id='userImgView'><p>{this.state.fileName ? (REGISTER.step2_P2[this.props.lang] + this.state.fileName) : REGISTER.step2_P1[this.props.lang]}</p><img src={this.props.userImg} alt=""/></div>
                         <button type="button">

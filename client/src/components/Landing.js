@@ -22,7 +22,7 @@ class Landing extends Component {
                 <main className="public">
                     <img src={landing} alt="Couple holding hands at the sun set"/>
                     <div className="textContent">
-                        <h1>{LANDING.TITLE[lang]}</h1>
+                        <h1>{LANDING.TITLE_1[lang]}<br/>{LANDING.TITLE_2[lang]}</h1>
                         <p>{LANDING.P1[lang]}</p>
                         <p>{LANDING.P2[lang]}
                         </p>

@@ -57,9 +57,14 @@ section.formStep{
 .formStep>p{
     margin-top: 0;
     padding-bottom: 3rem;
-    text-align: justify;
+    text-align: center;
 
     border-bottom: solid var(--dark-gray) 2px;
+}
+.formStep .required{
+    border: none;
+    margin: .5rem;
+    padding: 0;
 }
 .formStep>label{
     align-self: flex-start;

@@ -1,7 +1,11 @@
 export const LANDING = {
-    TITLE: {
-        pl: 'Aplikacja Coniunctum',
-        en: 'Coniunctum Application'
+    TITLE_1: {
+        pl: 'Coniunctum',
+        en: 'Coniunctum'
+    },
+    TITLE_2: {
+        pl: 'Aplikacja dla par',
+        en: 'Application for couples'
     },
     P1: {
         pl: 'Coniunctum jest aplikacją internetową skupiającą się na parach. Pozwala na komunikację z Twoją wyjątkową osobą najbardziej poufnie oraz na bezpieczne przechowywanie wspomnień z Waszego związku. Ułatwia ona dzielenie się i organizację wspólnego życia. Wszystko to z wykorzystaniem szyfrowania i zachowaniem Waszej prywatności.',
@@ -34,7 +38,7 @@ export const NAVBAR = {
         en: 'Home'
     },
     LINK2: {
-        pl: 'Strona',
+        pl: 'O stronie',
         en: 'About'
     },
     LINK3: {
@@ -174,11 +178,11 @@ export const RESETPASS = {
 }
 export const REGISTER = {
     BUTTON1_prev: {
-        pl: 'Poprzednia',
+        pl: 'Poprzedni',
         en: 'Previous'
     },
     BUTTON2_next: {
-        pl: 'Następna',
+        pl: 'Następny',
         en: 'Next'
     },
     BUTTON3_submit: {
@@ -192,6 +196,10 @@ export const REGISTER = {
     DIV1_2_step: {
         pl: 'z',
         en: 'of'
+    },
+    P_required: {
+        pl: '* - pola wymagane',
+        en: '* - required fields'
     },
     step1_VALIDATION_pass: {
         pl: 'Hasła nie są zgodne',
@@ -210,16 +218,16 @@ export const REGISTER = {
         en: 'Info needed to login to account'
     },
     step1_LABEL1: {
-        pl: 'Adres email',
-        en: 'Email address'
+        pl: '* Adres email',
+        en: '* Email address'
     },
     step1_LABEL2: {
-        pl: 'Hasło - minimalna długość 8 znaków',
-        en: 'Password - minimal length 8 characters'
+        pl: '* Hasło - minimalna długość 8 znaków',
+        en: '* Password - minimal length 8 characters'
     },
     step1_LABEL3: {
-        pl: 'Powtórz hasło',
-        en: 'Repeat password'
+        pl: '* Powtórz hasło',
+        en: '* Repeat password'
     },
     step2_P1: {
         pl: 'Domyślny awatar',
@@ -246,8 +254,8 @@ export const REGISTER = {
         en: 'Upload avatar'
     },
     step2_LABEL2: {
-        pl: 'Pseudonim',
-        en: 'Nickname'
+        pl: '* Pseudonim',
+        en: '* Nickname'
     },
     step2_LEGEND1: {
         pl: 'Płeć',
@@ -446,8 +454,8 @@ export const NAVSECTION = {
         en: 'Settings'
     },
     BUTTON11: {
-        pl: 'Więcej',
-        en: 'More'
+        pl: 'Opcje',
+        en: 'Options'
     },
     P2_partner: {
         pl: 'Partner',

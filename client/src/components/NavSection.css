@@ -27,7 +27,7 @@
     border-right: 1px solid var(--dark-gray);
     cursor: pointer;
 }
-button.navActive{
+button.navActive, .navigation button:active{
     background: var(--light-gray);
 }
 
@@ -47,6 +47,7 @@ button.navActive{
     flex-direction: column;
     align-items: center;
 }
+
 .navOpen.lastOnRight{
     right: 0;
 }
@@ -90,6 +91,11 @@ button.navActive{
 .partnerLabel{
     display: none;
 
+}
+@media screen and (max-height: 23rem){
+    .navOpen.rowView{
+        flex-direction: row;
+    }
 }
    
 @media screen and (min-width: 50rem){
@@ -144,7 +150,7 @@ button.navActive{
         align-items: center;
         justify-content: space-around;
     }
-    button.navActive{
+    button.navActive, .navigation button:active, .navigation button:hover{
         background: var(--dark-gray);
         color: #fff;
     }

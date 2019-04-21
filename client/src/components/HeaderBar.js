@@ -27,7 +27,7 @@ class HeaderBar extends Component{
 
         return (
             <header className="headerBar"> 
-                <div className="openTab">
+                <div className="openTab" onClick={() => window.location.reload(true)}>
                     <img src="https://image.flaticon.com/icons/svg/766/766583.svg" alt="Brand logo"/>
                     <p className="tabTitle">{this.props.currentComponent}</p>
                 </div>

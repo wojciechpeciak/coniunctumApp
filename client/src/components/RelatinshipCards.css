@@ -48,6 +48,10 @@
 .relationshipCard .confirmation{
     width: 50%;
 }
+.relationshipCard input:active, .relationshipCard input:hover{
+    /*box-shadow: 0 0 7px 0 var(--dark-gray);*/
+    filter: invert(.4);
+}
 /*============== Partner view ===========*/
 
 .partnerCardItems{

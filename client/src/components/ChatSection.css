@@ -185,6 +185,9 @@
     height: 90%;
     margin: .2rem;
 }
+.messageBar input:active, .messageBar label:active{
+    filter: invert(1);
+}
 
 @media screen and (min-width: 50rem){
     .conversation .content{
