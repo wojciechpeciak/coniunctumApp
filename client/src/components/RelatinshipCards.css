@@ -6,6 +6,7 @@
     font-size: 1.3rem;
     color: var(--light-gray);
     cursor: pointer;
+    border-radius: .5rem .5rem 0 0;
 }
 #leftButton.active{
     border-left: none;
