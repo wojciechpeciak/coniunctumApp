@@ -256,7 +256,7 @@
     background: var(--light-gray);
     border-radius: 50%;
 }
-.dailyEvents input:active, .dailyEvents input:hover{
+.dailyEvents input[type='image']:active, .dailyEvents input[type='image']:hover{
     filter: invert(.4);
 }
 .fullView{

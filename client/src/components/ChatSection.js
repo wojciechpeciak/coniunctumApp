@@ -34,7 +34,7 @@ class ChatSection extends Component{
                     componentThis.setState(prevState => ({
                         messages: [...messages]
                     }));
-                    console.log(componentThis.state.messages);
+                    //console.log(componentThis.state.messages);
                 }
             });
             // update chat with new message
@@ -43,7 +43,7 @@ class ChatSection extends Component{
                 componentThis.setState(prevState => ({
                     messages: [...prevState.messages, ...messages]
                 }));
-                console.log(componentThis.state.messages);
+                //console.log(componentThis.state.messages);
             });
 
             componentThis.state.socket.emit(USER_CONNECTED, componentThis.props.user);
