@@ -33,7 +33,7 @@ class PartnerInvitation extends Component{
             pairPartner(this.props.relationshipId, this.state.invitCode).then(response => {
                 if(response.partnerPaired){
                     this.setState({ ispaired: true }, () =>{
-                        window.setTimeout(()=>window.location.reload(), 3000)
+                        window.setTimeout(()=>window.location.reload(), 4000)
                     });
                     //this.props.setComponent( { target: { name: 'chat' } } )
                 }

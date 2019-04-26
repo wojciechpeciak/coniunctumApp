@@ -516,7 +516,7 @@ export const PARTNERINVIT = {
         en: 'Provided incorrect pairing code'
     },
     CONFIRMATION: {
-        pl: 'Konta połączono pomyślnie. Za chwilę następi odświeżenie strony.',
+        pl: 'Konta połączono pomyślnie. Za chwilę nastąpi odświeżenie strony.',
         en: 'Accounts paired successfully. The page will be refreshed in a moment.'
     },
     H11: {
