@@ -11,7 +11,8 @@ class PartnerInvitation extends Component{
 
         this.state = {
             invitCode: '',
-            incorrectCode: false
+            incorrectCode: false,
+            ispaired: false
         }
 
         this.onChange = this.onChange.bind(this);
@@ -31,8 +32,10 @@ class PartnerInvitation extends Component{
         if (this.state.invitCode !== this.props.invitCode) {
             pairPartner(this.props.relationshipId, this.state.invitCode).then(response => {
                 if(response.partnerPaired){
-                    this.props.setComponent( { target: { name: 'chat' } } )
-                    window.location.reload();
+                    this.setState({ ispaired: true }, () =>{
+                        window.setTimeout(()=>window.location.reload(), 3000)
+                    });
+                    //this.props.setComponent( { target: { name: 'chat' } } )
                 }
                 else {
                     this.setState( { incorrectCode: true } );
@@ -59,6 +62,12 @@ class PartnerInvitation extends Component{
             </div>
         );
 
+        const confirmation = (
+            <div className="confirmation">
+                <p>{PARTNERINVIT.CONFIRMATION[this.props.lang]}</p>
+            </div>
+        );
+
         return (
         <Fragment>
             <section className="invitOption">
@@ -71,6 +80,7 @@ class PartnerInvitation extends Component{
                 <h1>{PARTNERINVIT.H12[this.props.lang]}</h1>
                 <p>{PARTNERINVIT.P2[this.props.lang]}</p>
                 { this.state.incorrectCode && alert }
+                { this.state.ispaired && confirmation }
                 <form className="invitInput" onSubmit={this.onSubmit}>
                     <label htmlFor="invitCode">{PARTNERINVIT.LABEL1[this.props.lang]}</label>
                     <input type="text" name="invitCode" id="invitCode" value={this.state.invitCode} onChange={this.onChange}/>

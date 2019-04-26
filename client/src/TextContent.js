@@ -396,7 +396,7 @@ export const CONIUNCTUM = {
         en: 'Settings'
     },
     P1: {
-        pl: 'Podziel się Coniunctum z partnerem(ką)',
+        pl: 'Połącz konto z partnerem(ką)',
         en: 'Share Coniunctum with partner'
     },
     BUTTON1: {
@@ -514,6 +514,10 @@ export const PARTNERINVIT = {
     ALERT1: {
         pl: 'Wprowadzono niepoprawny kod parowania',
         en: 'Provided incorrect pairing code'
+    },
+    CONFIRMATION: {
+        pl: 'Konta połączono pomyślnie. Za chwilę następi odświeżenie strony.',
+        en: 'Accounts paired successfully. The page will be refreshed in a moment.'
     },
     H11: {
         pl: 'Twój kod parowania',
