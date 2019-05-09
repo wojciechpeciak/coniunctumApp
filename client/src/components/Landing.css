@@ -9,6 +9,7 @@ main.public {
 .public img{
     width: 100%;
     border-radius: .1rem;
+    height: auto;
 }
 .textContent{
     max-width: 50rem;
