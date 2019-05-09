@@ -38,5 +38,6 @@ main.public {
         order: 2;
         margin-left: 2rem;
         object-fit: cover;
+        height: 100%;
     }
 }
